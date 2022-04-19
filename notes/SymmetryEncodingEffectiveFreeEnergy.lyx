@@ -1,0 +1,363 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Derivation of an Effective Visible Energy in a Symmetry-Encoding RBM for
+ the Ising Model
+\end_layout
+
+\begin_layout Author
+Emanuel Casiano-Diaz
+\end_layout
+
+\begin_layout Date
+March 24, 2022
+\end_layout
+
+\begin_layout Standard
+Previously, Kipton discussed an energy model for an RBM-like structure that
+ respects symmetries in the two-dimensional Ising model.
+ This energy model is:
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset Formula 
+\[
+E[\bm{\sigma,\bm{h}}]=-\sum_{i,j,\alpha}W_{(\mathbf{i-j}),\alpha}\sigma_{i}h_{j,\alpha}-B\sum_{i}\sigma_{i}-\sum_{i,\alpha}c_{\alpha}h_{i,\alpha}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We are interested in obtaining a formula for the effective visible energy
+ of a spin configuration, also known as a 
+\begin_inset Quotes eld
+\end_inset
+
+free-energy
+\begin_inset Quotes erd
+\end_inset
+
+ in the literature.
+ The first step, is to marginalize out the hidden layer dependence of the
+ full probability distribution:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(\bm{\sigma})=\frac{1}{\mathcal{Z}}\sum_{\bm{h}}P(\bm{\sigma},\bm{h})=\frac{1}{\mathcal{Z}}\sum_{\bm{h}}e^{-E(\bm{\sigma},\bm{h})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substituting the symmetry-encoding energy into the exponent:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(\bm{\sigma})=\frac{1}{\mathcal{Z}}\sum_{\bm{h}}e^{\sum_{i,j,\alpha}W_{(\bm{i-j}),\alpha}\sigma_{i}h_{j,\alpha}+B\sum_{i}\sigma_{i}+\sum_{i,\alpha}c_{\alpha}h_{i,\alpha}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The second term in the exponent is independent of the hidden layer.
+ As such, the part of the exponential depending on this term can be factored
+ out from the sum over hidden vectors:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(\bm{\sigma})=\frac{1}{\mathcal{Z}}e^{B\sum_{i}\sigma_{i}}\sum_{\bm{h}}[e^{\sum_{i,j,\alpha}W_{(\bm{i-j}),\alpha}\sigma_{i}h_{j,\alpha}+\sum_{i,\alpha}c_{\alpha}h_{i,\alpha}}]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The summations over 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ in the exponent can be factored out, alongside the hidden neuron value
+ 
+\begin_inset Formula $h_{i,\alpha}$
+\end_inset
+
+, which only depends on these two indices:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(\bm{\sigma})=\frac{1}{\mathcal{Z}}e^{B\sum_{i}\sigma_{i}}\sum_{\bm{h}}[e^{\sum_{i,\alpha}h_{j,\alpha}z_{i,\alpha}}]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where the substitution 
+\begin_inset Formula $z_{i,\alpha}\equiv c_{\alpha}+\sum_{j}W_{(\bm{i-j}),\alpha}\sigma_{i}$
+\end_inset
+
+ has been performed.
+ Letting the total number of neurons in the hidden layer be 
+\begin_inset Formula $M$
+\end_inset
+
+ and recalling that each of these neurons can only take on the values 
+\begin_inset Formula $1$
+\end_inset
+
+ or 
+\begin_inset Formula $0$
+\end_inset
+
+, the sum can be rewritten as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sum_{\bm{h}}\to\prod_{\bm{i}}\prod_{\alpha=1}^{M}\sum_{h_{i,\alpha}=0}^{1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Additionally, recall that an exponential raised to a sum is the same as
+ a product of exponentials raised to each term:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+e^{\sum_{i}a_{i}}=\prod_{i}e^{a_{i}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the two lines above, the marginalized probability distribution becomes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(\bm{\sigma})=\frac{1}{\mathcal{Z}}e^{B\sum_{i}\sigma_{i}}[\prod_{i}\prod_{\alpha=1}^{M}\sum_{h_{i,\alpha}=0}^{1}][\prod_{i}\prod_{\alpha=1}^{M}e^{h_{i,\alpha}z_{i,\alpha}}]=\frac{1}{\mathcal{Z}}e^{B\sum_{i}\sigma_{i}}[\prod_{i}\prod_{\alpha=1}^{M}\sum_{h_{i,\alpha}=0}^{1}e^{h_{i,\alpha}z_{i,\alpha}}]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since the hidden neuron values are either 0 or 1, the summation over 
+\begin_inset Formula $h_{i,\alpha}$
+\end_inset
+
+ can be easily expanded:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(\bm{\sigma})=\frac{1}{\mathcal{Z}}e^{B\sum_{i}\sigma_{i}}\prod_{i}\prod_{\alpha=1}^{M}(1+e^{z_{i,\alpha}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Taking the natural logarithm of the factor in the parentheses and then exponenti
+ating:
+\begin_inset Formula 
+\[
+P(\bm{\sigma})=\frac{1}{\mathcal{Z}}e^{B\sum_{i}\sigma_{i}}\prod_{\bm{i}}\prod_{\alpha=1}^{M}e^{\ln(1+e^{z_{i,\alpha}})}=\frac{1}{\mathcal{Z}}e^{B\sum_{i}\sigma_{i}}e^{\sum_{i,\alpha}\ln(1+e^{z_{i,\alpha}})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Combining the two exponentials into one and recalling that 
+\begin_inset Formula $z_{i,\alpha}=c_{\alpha}+\sum_{j}W_{(\bm{i-j}),\alpha}\sigma_{i}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(\bm{\sigma})=\frac{1}{\mathcal{Z}}e^{B\sum_{i}\sigma_{i}}{}^{+\sum_{i,\alpha}\ln(1+e^{c_{\alpha}+\sum_{j}W_{(\bm{i-j}),\alpha}\sigma_{i}})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Notice that the exponent of the marginalized probability distribution now
+ depends only on the spins 
+\begin_inset Formula $\bm{\sigma}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(\bm{\sigma})=\frac{1}{\mathcal{Z}}e^{-\varepsilon(\bm{\sigma})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $\varepsilon(\bm{\sigma})$
+\end_inset
+
+ is the effective visible energy of the spins, which in this case are the
+ visible layer, and it is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varepsilon(\bm{\sigma})=-B\sum_{i}\sigma_{i}-\sum_{i,\alpha}\ln(1+e^{c_{\alpha}+\sum_{j}W_{(\bm{i-j}),\alpha}\sigma_{i}})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This is also known as the 
+\begin_inset Quotes eld
+\end_inset
+
+free energy
+\begin_inset Quotes erd
+\end_inset
+
+ and it will be used to track the training of the model, by computing the
+ difference between input and reconstructed spins, also known as the reconstruct
+ion error.
+\end_layout
+
+\end_body
+\end_document
