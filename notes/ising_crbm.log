@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  31 MAY 2022 10:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  8 JUN 2022 13:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -856,247 +856,77 @@ most likely cause issues with the appearance of inserted todonotes. The issue c
 an be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to 
 loading the todonotes package. on input line 94.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 105
+LaTeX Font Info:    Trying to load font information for U+msa on input line 107
 .
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 105
+LaTeX Font Info:    Trying to load font information for U+msb on input line 107
 .
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<../figures/symmetrization_diagram.pdf, id=55, 642.00093pt x 321.24585pt>
+<../figures/symmetrization_diagram.pdf, id=51, 642.00093pt x 321.24585pt>
 File: ../figures/symmetrization_diagram.pdf Graphic file (type pdf)
 <use ../figures/symmetrization_diagram.pdf>
 Package pdftex.def Info: ../figures/symmetrization_diagram.pdf  used on input l
-ine 108.
+ine 110.
 (pdftex.def)             Requested size: 469.75502pt x 235.06631pt.
-<../figures/T_4.0_kernelDims_2-3_withRotations.pdf, id=56, 433.62pt x 289.08pt>
-
-File: ../figures/T_4.0_kernelDims_2-3_withRotations.pdf Graphic file (type pdf)
-
-<use ../figures/T_4.0_kernelDims_2-3_withRotations.pdf>
-Package pdftex.def Info: ../figures/T_4.0_kernelDims_2-3_withRotations.pdf  use
-d on input line 114.
-(pdftex.def)             Requested size: 469.75502pt x 313.1854pt.
+<../figures/reflection_symmetrization.pdf, id=52, 998.61534pt x 368.19644pt>
+File: ../figures/reflection_symmetrization.pdf Graphic file (type pdf)
+<use ../figures/reflection_symmetrization.pdf>
+Package pdftex.def Info: ../figures/reflection_symmetrization.pdf  used on inpu
+t line 118.
+(pdftex.def)             Requested size: 469.75502pt x 173.20403pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../figures/L_100_T_4.0_kernelSize_3_crbm_with_rotation_every_step.pdf, id=57, 
-1084.05pt x 361.35pt>
-File: ../figures/L_100_T_4.0_kernelSize_3_crbm_with_rotation_every_step.pdf Gra
-phic file (type pdf)
-<use ../figures/L_100_T_4.0_kernelSize_3_crbm_with_rotation_every_step.pdf>
-Package pdftex.def Info: ../figures/L_100_T_4.0_kernelSize_3_crbm_with_rotation
-_every_step.pdf  used on input line 119.
-(pdftex.def)             Requested size: 469.75502pt x 156.58498pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+No file ising_crbm.bbl.
 [1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../figu
-res/symmetrization_diagram.pdf>] [2 <../figures/T_4.0_kernelDims_2-3_withRotati
-ons.pdf> <../figures/L_100_T_4.0_kernelSize_3_crbm_with_rotation_every_step.pdf
-
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../figures/L_100_T_4.0_kerne
-lSize_3_crbm_with_rotation_every_step.pdf): PDF inclusion: multiple pdfs with p
-age group included in a single page
->]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 130.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 130.
-
-<../figures/T_4.0_kernelDims_1-3_no_symmetries.pdf, id=145, 433.62pt x 289.08pt
->
-File: ../figures/T_4.0_kernelDims_1-3_no_symmetries.pdf Graphic file (type pdf)
-
-<use ../figures/T_4.0_kernelDims_1-3_no_symmetries.pdf>
-Package pdftex.def Info: ../figures/T_4.0_kernelDims_1-3_no_symmetries.pdf  use
-d on input line 135.
-(pdftex.def)             Requested size: 469.75502pt x 313.1854pt.
-<../figures/L_100_T_4.0_kernelDims_1-3_no_symmetries.pdf, id=146, 1084.05pt x 3
-61.35pt>
-File: ../figures/L_100_T_4.0_kernelDims_1-3_no_symmetries.pdf Graphic file (typ
-e pdf)
-<use ../figures/L_100_T_4.0_kernelDims_1-3_no_symmetries.pdf>
-Package pdftex.def Info: ../figures/L_100_T_4.0_kernelDims_1-3_no_symmetries.pd
-f  used on input line 140.
-(pdftex.def)             Requested size: 469.75502pt x 156.58498pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../figures/T_4.0_kernelDims_2-3_no_symmetries.pdf, id=147, 433.62pt x 289.08pt
->
-File: ../figures/T_4.0_kernelDims_2-3_no_symmetries.pdf Graphic file (type pdf)
-
-<use ../figures/T_4.0_kernelDims_2-3_no_symmetries.pdf>
-Package pdftex.def Info: ../figures/T_4.0_kernelDims_2-3_no_symmetries.pdf  use
-d on input line 145.
-(pdftex.def)             Requested size: 469.75502pt x 313.1854pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../figures/L_100_T_4.0_kernelDims_2-3_no_symmetries.pdf, id=148, 1084.05pt x 3
-61.35pt>
-File: ../figures/L_100_T_4.0_kernelDims_2-3_no_symmetries.pdf Graphic file (typ
-e pdf)
-<use ../figures/L_100_T_4.0_kernelDims_2-3_no_symmetries.pdf>
-Package pdftex.def Info: ../figures/L_100_T_4.0_kernelDims_2-3_no_symmetries.pd
-f  used on input line 150.
-(pdftex.def)             Requested size: 469.75502pt x 156.58498pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../figures/T_4.0_kernelDims_4-3_no_symmetries.pdf, id=149, 433.62pt x 289.08pt
->
-File: ../figures/T_4.0_kernelDims_4-3_no_symmetries.pdf Graphic file (type pdf)
-
-<use ../figures/T_4.0_kernelDims_4-3_no_symmetries.pdf>
-Package pdftex.def Info: ../figures/T_4.0_kernelDims_4-3_no_symmetries.pdf  use
-d on input line 155.
-(pdftex.def)             Requested size: 469.75502pt x 313.1854pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../figures/L_100_T_4.0_kernelDims_4-3_no_symmetries.pdf, id=150, 1084.05pt x 3
-61.35pt>
-File: ../figures/L_100_T_4.0_kernelDims_4-3_no_symmetries.pdf Graphic file (typ
-e pdf)
-<use ../figures/L_100_T_4.0_kernelDims_4-3_no_symmetries.pdf>
-Package pdftex.def Info: ../figures/L_100_T_4.0_kernelDims_4-3_no_symmetries.pd
-f  used on input line 160.
-(pdftex.def)             Requested size: 469.75502pt x 156.58498pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../figures/T_4.0_kernelDims_2-2_no_symmetries.pdf, id=151, 433.62pt x 289.08pt
->
-File: ../figures/T_4.0_kernelDims_2-2_no_symmetries.pdf Graphic file (type pdf)
-
-<use ../figures/T_4.0_kernelDims_2-2_no_symmetries.pdf>
-Package pdftex.def Info: ../figures/T_4.0_kernelDims_2-2_no_symmetries.pdf  use
-d on input line 169.
-(pdftex.def)             Requested size: 469.75502pt x 313.1854pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../figures/L_100_T_4.0_kernelDims_2-2_no_symmetries.pdf, id=152, 1084.05pt x 3
-61.35pt>
-File: ../figures/L_100_T_4.0_kernelDims_2-2_no_symmetries.pdf Graphic file (typ
-e pdf)
-<use ../figures/L_100_T_4.0_kernelDims_2-2_no_symmetries.pdf>
-Package pdftex.def Info: ../figures/L_100_T_4.0_kernelDims_2-2_no_symmetries.pd
-f  used on input line 174.
-(pdftex.def)             Requested size: 469.75502pt x 156.58498pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-File: ../figures/T_4.0_kernelDims_2-3_no_symmetries.pdf Graphic file (type pdf)
-
-<use ../figures/T_4.0_kernelDims_2-3_no_symmetries.pdf>
-Package pdftex.def Info: ../figures/T_4.0_kernelDims_2-3_no_symmetries.pdf  use
-d on input line 179.
-(pdftex.def)             Requested size: 469.75502pt x 313.1854pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-File: ../figures/L_100_T_4.0_kernelDims_2-3_no_symmetries.pdf Graphic file (typ
-e pdf)
-<use ../figures/L_100_T_4.0_kernelDims_2-3_no_symmetries.pdf>
-Package pdftex.def Info: ../figures/L_100_T_4.0_kernelDims_2-3_no_symmetries.pd
-f  used on input line 184.
-(pdftex.def)             Requested size: 469.75502pt x 156.58498pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../figures/T_4.0_kernelDims_2-4_no_symmetries.pdf, id=153, 433.62pt x 289.08pt
->
-File: ../figures/T_4.0_kernelDims_2-4_no_symmetries.pdf Graphic file (type pdf)
-
-<use ../figures/T_4.0_kernelDims_2-4_no_symmetries.pdf>
-Package pdftex.def Info: ../figures/T_4.0_kernelDims_2-4_no_symmetries.pdf  use
-d on input line 189.
-(pdftex.def)             Requested size: 469.75502pt x 313.1854pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../figures/L_100_T_4.0_kernelDims_2-4_no_symmetries.pdf, id=154, 1084.05pt x 3
-61.35pt>
-File: ../figures/L_100_T_4.0_kernelDims_2-4_no_symmetries.pdf Graphic file (typ
-e pdf)
-<use ../figures/L_100_T_4.0_kernelDims_2-4_no_symmetries.pdf>
-Package pdftex.def Info: ../figures/L_100_T_4.0_kernelDims_2-4_no_symmetries.pd
-f  used on input line 194.
-(pdftex.def)             Requested size: 469.75502pt x 156.58498pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[3 <../figures/T_4.0_kernelDims_1-3_no_symmetries.pdf>]
-No file ising_crbm.bbl.
-[4 <../figures/L_100_T_4.0_kernelDims_1-3_no_symmetries.pdf> <../figures/T_4.0_
-kernelDims_2-3_no_symmetries.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../figures/T_4.0_kernelDims_
-2-3_no_symmetries.pdf): PDF inclusion: multiple pdfs with page group included i
-n a single page
->] [5 <../figures/L_100_T_4.0_kernelDims_2-3_no_symmetries.pdf> <../figures/T_4
-.0_kernelDims_4-3_no_symmetries.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../figures/T_4.0_kernelDims_
-4-3_no_symmetries.pdf): PDF inclusion: multiple pdfs with page group included i
-n a single page
->] [6 <../figures/L_100_T_4.0_kernelDims_4-3_no_symmetries.pdf> <../figures/T_4
-.0_kernelDims_2-2_no_symmetries.pdf
-
-pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../figures/T_4.0_kernelDims_
-2-2_no_symmetries.pdf): PDF inclusion: multiple pdfs with page group included i
-n a single page
->] [7 <../figures/L_100_T_4.0_kernelDims_2-2_no_symmetries.pdf>] [8 <../figures
-/T_4.0_kernelDims_2-4_no_symmetries.pdf>] [9 <../figures/L_100_T_4.0_kernelDims
-_2-4_no_symmetries.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 228.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 228.
+res/symmetrization_diagram.pdf>] [2 <../figures/reflection_symmetrization.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 134.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 134.
  (./ising_crbm.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 228.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 228.
-Package rerunfilecheck Info: File `ising_crbm.out' has not changed.
-(rerunfilecheck)             Checksum: 867BEBF7252CE76D87D1D489D4CD25E2;368.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 228.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 134.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 134.
+
+
+Package rerunfilecheck Warning: File `ising_crbm.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `ising_crbm.out':
+(rerunfilecheck)             Before: 690BF976035D19037CB27698AF319035;267
+(rerunfilecheck)             After:  4E1351499C9217714D9A197DF4CB0BC9;273.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 134.
  )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 91 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 20828 strings out of 480608
- 387628 string characters out of 5903631
- 646078 words of memory out of 5000000
- 36240 multiletter control sequences out of 15000+600000
- 548964 words of font info for 76 fonts, out of 8000000 for 9000
+ 20706 strings out of 480608
+ 382963 string characters out of 5903631
+ 642078 words of memory out of 5000000
+ 36154 multiletter control sequences out of 15000+600000
+ 543604 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,6n,83p,567b,1408s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,6n,83p,440b,1369s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm
 -super-t1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
-.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.p
-fb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb
-></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on ising_crbm.pdf (9 pages, 608721 bytes).
+m/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1
+440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx172
+8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.
+pfb>
+Output written on ising_crbm.pdf (2 pages, 76609 bytes).
 PDF statistics:
- 440 PDF objects out of 1000 (max. 8388607)
- 239 compressed objects within 3 object streams
- 31 named destinations out of 1000 (max. 500000)
- 222 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 108 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
+ 10 named destinations out of 1000 (max. 500000)
+ 159 words of extra memory for PDF output out of 10000 (max. 10000000)
 
