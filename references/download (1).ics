@@ -1,0 +1,11 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:20220715T150000Z
+DTEND:20220715T154500Z
+SUMMARY:MDLIVE Video Appointment
+DESCRIPTION:https://www.mdlive.com/sign-in/\n\nWe recommend that you login to mdlive.com or the mobile app at least 5 minutes before your visit.
+LOCATION:https://www.mdlive.com/sign-in/
+UID:-20220715T150000Z-MDLIVE Video Appointment
+END:VEVENT
+END:VCALENDAR

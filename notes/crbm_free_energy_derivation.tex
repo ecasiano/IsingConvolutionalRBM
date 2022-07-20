@@ -1,0 +1,134 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% --------------------------------------------------------------
+% Homework Template by Dana Ernst, reproduced here with thanks.
+% --------------------------------------------------------------
+% This is all preamble stuff that you don't have to worry about.
+% Head down to where it says "Start here"
+% --------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{cite}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\Eqref}[1]{Eq.~\eqref{#1}}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+
+% --------------------------------------------------------------
+%                         Start here
+% --------------------------------------------------------------
+
+\title{Free energy of convolutional RBM}%replace X with the appropriate number
+\author{Emanuel Casiano-Diaz}
+\maketitle
+
+In Ref.~\cite{Alcalde_Puente_2020}, the authors propose a convolutional Restricted Boltzmann Machine (CRBM) to generate samples of physical models, such as Ising and Kitaev models. The energy of the CRBM is:
+%
+\begin{equation}
+E(v,h) = -\sum_{k,i,j} h_{ij}^k (W^k * v)_{ij} - \sum_{k} h_{\rm{bias}}^k \sum_{i,j} h_{ij}^k - v_{\rm{bias}} \sum_{i,j} v_{ij}
+\label{eq:crbm_energy}
+\end{equation}
+%
+where $i,j$ are row and column indices and $k$ is a kernel (or convolutional filter) index. The operation $(W^k * v)$ is a two-dimensional convolution between the $k$-th kernel and the visible layer. The visible neuron values are $v_{ij}=0,1$ and the hidden neuron values are $h_{ij}^k=0,1$. Note that in this model there are $k$ layers of hidden neurons. The visible layer bias is $v_{\rm{bias}}$, which is constant, and the hidden layer bias, which depends on the hidden layer, is $h_{\rm{bias}}^k$.
+
+The authors propose that, by summing over the hidden layer in \Eqref{eq:crbm_energy}, the following free-energy of the visible layer is obtained:
+%
+\begin{equation}
+F(v) = -v_{\rm{bias}} \sum_{i,j} v_{ij} - \sum_{k,i,j} \log(1 + e^{(v * W^k)_{ij} + h_{\rm{bias}}^k})
+\label{eq:crbm_free_energy}
+\end{equation}
+%
+
+The goal of the CRBM training is to obtain network weights and biases that make \Eqref{eq:crbm_free_energy} equal to the physical energy of the desired model. Here, we want to derive in detail how to get \Eqref{eq:crbm_free_energy} from \Eqref{eq:crbm_energy}.
+
+% --------------------------------------------------------------
+\section*{Derivation}
+
+The weights of CRBM configurations follow a Boltzmann distribution:
+%
+\begin{equation}
+P(v,h) = \frac{1}{\mathcal{Z}_{\rm{CRBM}}} e^{-E(v,h)}
+\end{equation}
+%
+where $\mathcal{Z}_{\rm{CRBM}}$ is the normalization constant for the CRBM model (which in general is not equal to the normalization constant of the physical model). The marginalized probability of the visible layer can be obtained by summing over the hidden layer degrees of freedom:
+%
+\begin{align}
+\mathcal{Z}_{\rm{CRBM}} \cdot P(v) &= \sum_{h} P(v,h) \nonumber \\ 
+&= \sum_{h} e^{\sum_{k,i,j} h_{ij}^k (W^k * v)_{ij} + \sum_{k} h_{\rm{bias}}^k \sum_{i,j} h_{ij}^k + v_{\rm{bias}} \sum_{i,j} v_{ij}} 
+\end{align}
+%
+The last term in the exponent is independent of the hidden layer and the corresponding exponential can be factored out:
+%
+\begin{equation}
+\mathcal{Z}_{\rm{CRBM}} \cdot P(v) = e^{v_{\rm{bias}} \sum_{i,j} v_{ij}} \sum_{h} e^{\sum_{k,i,j} h_{ij}^k (W^k * v)_{ij} + \sum_{k,i,j} h_{\rm{bias}}^k h_{ij}^k}
+\label{eq:equation5}
+\end{equation}
+%
+Recalling that the hidden neurons can take values $h_{ij}^k=0,1$, the summation over hidden layer degrees of freedom can be written more explicitly as:
+%
+\begin{equation}
+\sum_h \to \prod_{k} \prod_{i} \prod_{j} \sum_{h_{ij}^k=0}^1
+\end{equation}
+%
+Additionally, recall that the exponential of a sum is equal to a product of exponentials. Thus \Eqref{eq:equation5} can be rewritten as:
+%
+\begin{align}
+\mathcal{Z}_{\rm{CRBM}} \cdot P(v) &= e^{v_{\rm{bias}} \sum_{i,j} v_{ij}} \left [ \prod_{k} \prod_{i} \prod_{j} \sum_{h_{ij}^k=0}^1 \right ] \left [ \prod_{k} \prod_{i} \prod_{j} \right ]e^{h_{ij}^k (W^k * v)_{ij} + h_{\rm{bias}}^k h_{ij}^k} \nonumber \\
+&= e^{v_{\rm{bias}} \sum_{i,j} v_{ij}} \left [ \prod_{k} \prod_{i} \prod_{j} \sum_{h_{ij}^k=0}^1 \right ] e^{h_{ij}^k (W^k * v)_{ij} + h_{\rm{bias}}^k h_{ij}^k}
+\end{align}
+%
+where the identity $\prod_x f_x \prod_x g_x = \prod_x f_x g_x$ has been used. Expanding over the hidden neuron values:
+%
+\begin{align}
+ \mathcal{Z}_{\rm{CRBM}} \cdot P(v) &=  e^{v_{\rm{bias}} \sum_{i,j} v_{ij}} \left [ \prod_{k} \prod_{i} \prod_{j} \right ] \left (1+ e^{(W^k * v)_{ij} + h_{\rm{bias}}^k} \right ) \nonumber \\
+ &= e^{v_{\rm{bias}} \sum_{i,j} v_{ij}} \left [ \prod_{k} \prod_{i} \prod_{j} \right ] e^{\log \left (1+ e^{(W^k * v)_{ij} + h_{\rm{bias}}^k} \right)} \nonumber \\
+ &= e^{v_{\rm{bias}} \sum_{i,j} v_{ij}} e^{\sum_{k,i,j} \log \left (1+ e^{(W^k * v)_{ij} + h_{\rm{bias}}^k} \right)} \nonumber \\
+ \mathcal{Z}_{\rm{CRBM}} \cdot P(v) &= e^{ v_{\rm{bias}} \sum_{i,j} v_{i,j} + \sum_{k,i,j} \log \left (1+ e^{(W^k * v)_{ij} + h_{\rm{bias}}^k} \right)} \nonumber \\
+ \implies P(v) &= \frac{1}{\mathcal{Z}_{\rm{CRBM}}}e^{ v_{\rm{bias}} \sum_{i,j} v_{i,j} + \sum_{k,i,j} \log \left (1+ e^{(W^k * v)_{ij} + h_{\rm{bias}}^k} \right)} 
+\end{align}
+%
+
+The negative of the exponent is the free-energy of the visible layer:
+%
+\begin{equation}
+F(v) =  - v_{\rm{bias}} \sum_{i,j} v_{ij} - \sum_{k,i,j} \log \left (1+ e^{(W^k * v)_{ij} + h_{\rm{bias}}^k} \right)
+\end{equation}
+%
+which is the same as the free-energy in \Eqref{eq:crbm_free_energy} $\blacksquare$
+
+% --------------------------------------------------------------
+
+% --------------------------------------------------------------
+%     You don't have to mess with anything below this line.
+% --------------------------------------------------------------
+
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}
