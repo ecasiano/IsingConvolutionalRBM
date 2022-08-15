@@ -26,10 +26,9 @@ def autocorrelation_function(time,scale,autocorrelation_time):
     return scale*np.exp(-time/autocorrelation_time)
 
 ''' ------------------------- Define Functions (End) ------------------------- '''
-
 # Set how much initial samples to discard
-throwaway = 500
-
+throwaway = 0
+print("lol")
 # Set physical parameters
 L_list = [2**i for i in range(2,7)]
 L_list = [8]
@@ -39,8 +38,12 @@ J2 = 0.0
 
 kernel_dims = [2,2]
 
+hidden_sweeps = 25
+
+modelType = 'no_symmetries'
+
 # Open file for writing
-filename = './data_nnn/L_many_T_'+str(T)+'_J1_'+str(J1)+'_J2_'+str(J2)+'_kernelDims_'+str(kernel_dims[0])+'-'+str(kernel_dims[1])+'_autocorr_regu.dat'
+filename = './data_nnn/L_many_T_'+str(T)+'_J1_'+str(J1)+'_J2_'+str(J2)+'_kernelDims_'+str(kernel_dims[0])+'-'+str(kernel_dims[1])+'_'+'hiddenSweeps_'+str(hidden_sweeps)+'_autocorr_regu_metro.dat'
 
 file = open(filename, "w")
 header = "#L=many, T=%.2f \n# L    tau_E          tau_E_err          tau_M          tau_M_err\n"%(T)
@@ -49,7 +52,7 @@ file.write(header)
 for L in L_list:
     # Load data 
     
-    data_correlated = np.loadtxt("./data_nnn/L_"+str(L)+"_T_"+str(T)+"_J1_"+str(J1)+"_J2_"+str(J2)+"_kernelDims_"+str(kernel_dims[0])+"-"+str(kernel_dims[1])+"_no_symmetries_regu.dat")
+    data_correlated = np.loadtxt('./data_nnn/L_'+str(L)+'_T_'+str(T)+'_J1_'+str(J1)+'_J2_'+str(J2)+'_kernelDims_'+str(kernel_dims[0])+'-'+str(kernel_dims[1])+'_'+'hiddenSweeps_'+str(hidden_sweeps)+'_'+modelType+'_regu_metro.dat')
     
     E_data = data_correlated[:,0][throwaway:]
     M_data = data_correlated[:,1][throwaway:]

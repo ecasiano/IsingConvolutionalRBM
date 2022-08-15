@@ -28,11 +28,12 @@ def autocorrelation_function(time,scale,autocorrelation_time):
 ''' ------------------------- Define Functions (End) ------------------------- '''
 
 # Set how much initial samples to discard
-throwaway = 10000
+throwaway = 20000
 
 # Set physical parameters
-L_list = [2**i for i in range(5,7)]
-T = 1.0
+L_list = [2**i for i in range(2,7)]
+L_list = [8]
+T = 2.27
 J1 = -1.0
 J2 = 0.0
 
@@ -54,8 +55,8 @@ for L in L_list:
     M_data = data_correlated[:,1][throwaway:]
     
     tau_E = emcee.autocorr.integrated_time(E_data)
-    tau_M = emcee.autocorr.integrated_time(M_data)
-    # tau_M = 1
+    # tau_M = emcee.autocorr.integrated_time(M_data)
+    tau_M = -1
 
     file.write('%d %.8f %.8f\n'%(L,tau_E,tau_M))
 
